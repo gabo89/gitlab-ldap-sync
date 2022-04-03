@@ -1,5 +1,4 @@
 var co = require('co');
-var every = require('schedule').every;
 var ActiveDirectory = require('activedirectory');
 var NodeGitlab = require('node-gitlab');
 
@@ -134,18 +133,6 @@ GitlabLdapGroupSync.prototype.accessLevel = function (id, membersOwner) {
         return this.config['ownerAccessLevel'] || ACCESS_LEVEL_OWNER;
     }
     return this.config['defaultAccessLevel'] || ACCESS_LEVEL_NORMAL;
-}
-
-GitlabLdapGroupSync.prototype.startScheduler = function (interval) {
-  this.stopScheduler();
-  ins = every(interval).do(this.sync.bind(this));
-}
-
-GitlabLdapGroupSync.prototype.stopScheduler = function () {
-  if (ins) {
-    ins.stop();
-  }
-  ins = undefined;
 }
 
 GitlabLdapGroupSync.prototype.resolveLdapGroupMembers = function(ldap, group, gitlabUserMap) {
