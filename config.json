@@ -1,0 +1,20 @@
+{
+  "port": 8080,
+  "syncInterval": "10m",
+  "gitlab": {
+    "api": "http://gitlab.gabrielexamples.com/api/v4",
+    "privateToken": "ykLxB_hhQtBmhg-m83uB"
+  },
+  "ldap": {
+    "url": "ldap://10.0.0.7",
+    "baseDN": "DC=example,DC=com",
+    "username": "connector@example.com",
+    "password": "Ldapserverpelado95"
+  },
+  "groupPrefix": "gitlab-",
+  "ownersGroups": "gitlab-noone",
+  "ownerAccessLevel": 50,
+  "defaultAccessLevel": 30
+
+}
+
