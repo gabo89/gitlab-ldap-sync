@@ -65,7 +65,7 @@ GitlabLdapGroupSync.prototype.sync = function () {
     }
     while(pagedGroups.length == 100);
 
-    var membersOwner = yield this.resolveLdapGroupMembers(ldap, this.config['ownersGroup'] || 'admins', gitlabUserMap);
+    var membersOwner = yield this.resolveLdapGroupMembers(ldap, 'admins', gitlabUserMap);
     var membersDefault = yield this.resolveLdapGroupMembers(ldap, 'default', gitlabUserMap);
 
     for (var gitlabGroup of gitlabGroups) {
