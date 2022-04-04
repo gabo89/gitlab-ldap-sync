@@ -10,7 +10,6 @@
     "password": "Ldapserverpelado95"
   },
   "groupPrefix": "gitlab-",
-  "ownersGroups": "admins",
   "ownerAccessLevel": 50,
   "defaultAccessLevel": 30
 }
