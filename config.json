@@ -1,6 +1,4 @@
 {
-  "port": 8080,
-  "syncInterval": "10m",
   "gitlab": {
     "api": "http://gitlab.gabrielexamples.com/api/v4",
     "privateToken": "ykLxB_hhQtBmhg-m83uB"
@@ -15,6 +13,5 @@
   "ownersGroups": "gitlab-noone",
   "ownerAccessLevel": 50,
   "defaultAccessLevel": 30
-
 }
 
