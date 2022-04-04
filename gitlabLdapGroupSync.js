@@ -2,7 +2,10 @@ var co = require('co');
 var ActiveDirectory = require('activedirectory');
 var NodeGitlab = require('node-gitlab');
 
-var ACCESS_LEVEL_OWNER = 50;
+//owner
+var ACCESS_LEVEL_OWNER = 50; 
+
+//developer
 var ACCESS_LEVEL_NORMAL = 30;
 
 module.exports = GitlabLdapGroupSync;
