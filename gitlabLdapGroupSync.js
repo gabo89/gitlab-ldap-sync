@@ -124,8 +124,6 @@ GitlabLdapGroupSync.prototype.sync = function () {
   });
 }
 
-var ins = undefined;
-
 GitlabLdapGroupSync.prototype.accessLevel = function (id, membersOwner) {
     var owner = membersOwner.indexOf(id) > -1
 
