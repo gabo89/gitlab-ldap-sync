@@ -1,13 +1,13 @@
 {
   "gitlab": {
     "api": "http://gitlab.gabrielexamples.com/api/v4",
-    "privateToken": "ykLxB_hhQtBmhg-m83uB"
+    "privateToken": "<token>"
   },
   "ldap": {
     "url": "ldap://10.0.0.7",
     "baseDN": "DC=example,DC=com",
     "username": "connector@example.com",
-    "password": "Ldapserverpelado95"
+    "password": "<password>"
   },
   "groupPrefix": "gitlab-",
   "ownerAccessLevel": 50,
