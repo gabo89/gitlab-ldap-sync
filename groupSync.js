@@ -8,15 +8,15 @@ var ACCESS_LEVEL_OWNER = 50;
 //developer
 var ACCESS_LEVEL_NORMAL = 30;
 
-module.exports = GitlabLdapGroupSync;
+module.exports = groupSync;
 
 var isRunning = false;
 var gitlab = undefined;
 var ldap = undefined;
 
-function GitlabLdapGroupSync(config) {
-  if (!(this instanceof GitlabLdapGroupSync))
-    return new GitlabLdapGroupSync(config)
+function groupSync(config) {
+  if (!(this instanceof groupSync))
+    return new groupSync(config)
 
   gitlab = NodeGitlab.createThunk(config.gitlab);
   ldap = new ActiveDirectory(config.ldap);
@@ -24,7 +24,7 @@ function GitlabLdapGroupSync(config) {
 }
 
 
-GitlabLdapGroupSync.prototype.sync = function () {
+groupSync.prototype.sync = function () {
 
   if (isRunning) {
     console.log('ignore trigger, a sync is already running');
@@ -127,7 +127,7 @@ GitlabLdapGroupSync.prototype.sync = function () {
   });
 }
 
-GitlabLdapGroupSync.prototype.accessLevel = function (id, membersOwner) {
+groupSync.prototype.accessLevel = function (id, membersOwner) {
     var owner = membersOwner.indexOf(id) > -1
 
     if(owner) {
@@ -136,7 +136,7 @@ GitlabLdapGroupSync.prototype.accessLevel = function (id, membersOwner) {
     return this.config['defaultAccessLevel'] || ACCESS_LEVEL_NORMAL;
 }
 
-GitlabLdapGroupSync.prototype.resolveLdapGroupMembers = function(ldap, group, gitlabUserMap) {
+groupSync.prototype.resolveLdapGroupMembers = function(ldap, group, gitlabUserMap) {
   var groupName = (this.config.groupPrefix || 'gitlab-') + group
   console.log('Loading users for group: ' + groupName)
   return new Promise(function (resolve, reject) {
