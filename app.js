@@ -19,8 +19,8 @@ if (result.errors.length > 0) {
   process.exit(1);
 }
 
-var gitlabLdapGroupSync = new require('./gitlabLdapGroupSync')(config);
-gitlabLdapGroupSync.sync();
+var groupSync = new require('./groupSync')(config);
+groupSync.sync();
 
 // Helper functions
 function readEnvironmentVariables(schema, conf, prefix = '') {
